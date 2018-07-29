@@ -1,0 +1,15 @@
+{
+  "name": "node-docker",
+  "version": "1.0.0",
+  "description": "Docker config for a sample node project",
+  "main": "index.js",
+  "scripts": {
+    "start": "./bin/start.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prashanth Rajaram",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
