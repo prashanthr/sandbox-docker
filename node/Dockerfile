@@ -1,12 +1,28 @@
-# Node 8.11.3 Image
-FROM node:8.11.3
-
+# Node 8.14.x Image
+FROM node:8.14-jessie
+# Labels & metadata
+LABEL version="1.0"
+LABEL description="This is a node docker image"
+LABEL maintainer "Prashanth R <https://github.com/prashanthr>"
 # OS Upgrades & Dependencies
+RUN echo 'Installing OS dependencies...'
 RUN apt-get update &&  apt-get dist-upgrade -y && apt-get clean \
 && echo 'Finished installing OS dependencies...'
-
+# Set env
+ENV WORK_DIR=/var/www/deploy/app
+ENV NODE_ENV=production
+ENV PORT=8080
+# Workdir
+RUN mkdir -p ${WORK_DIR}
+WORKDIR ${WORK_DIR}
+# package handling
+ADD package*.json ${WORK_DIR}
+RUN npm install
 # Install App Dependencies
-COPY package.json /.app/
-
+COPY . ${WORK_DIR}
 # Install packages
 RUN npm install --production
+# Expose port
+EXPOSE ${PORT}
+# Run application
+CMD ["npx babel-node", "./src/index.js"]

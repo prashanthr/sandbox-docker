@@ -4,12 +4,20 @@
   "description": "Docker config for a sample node project",
   "main": "index.js",
   "scripts": {
-    "start": "./bin/start.sh",
+    "start": "PORT=8080 npx babel-node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Prashanth Rajaram",
   "license": "ISC",
+  "engines": {
+    "node": "8.x"
+  },
   "dependencies": {
-    "babel-cli": "^6.26.0"
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "express": "^4.16.4"
   }
 }
