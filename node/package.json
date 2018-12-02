@@ -9,6 +9,10 @@
   },
   "author": "Prashanth Rajaram",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashanthr/sandbox-docker.git"
+  },
   "engines": {
     "node": "8.x"
   },

@@ -10,7 +10,7 @@ RUN echo 'Installing OS dependencies...'
 RUN apt-get update &&  apt-get dist-upgrade -y && apt-get clean \
 && echo 'Finished installing OS dependencies...'
 # Set env
-ENV WORK_DIR=/var/www/deploy/app
+ENV WORK_DIR=/var/www/deploy/app/
 ENV NODE_ENV=production
 ENV PORT=8080
 # Workdir
@@ -18,11 +18,9 @@ RUN mkdir -p ${WORK_DIR}
 WORKDIR ${WORK_DIR}
 # package handling
 ADD package*.json ${WORK_DIR}
-RUN npm install
+RUN npm install --${NODE_ENV}
 # Install App Dependencies
 COPY . ${WORK_DIR}
-# Install packages
-RUN npm install --production
 # Expose port
 EXPOSE ${PORT}
 # Run application
