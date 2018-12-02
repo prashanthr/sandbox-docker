@@ -2,6 +2,7 @@
 FROM node:8.14-jessie
 # Labels & metadata
 LABEL version="1.0"
+LABEL name="node-docker-bunny"
 LABEL description="This is a node docker image"
 LABEL maintainer "Prashanth R <https://github.com/prashanthr>"
 # OS Upgrades & Dependencies

@@ -1,7 +1,7 @@
 {
-  "name": "node-docker",
+  "name": "node-docker-bunny",
   "version": "1.0.0",
-  "description": "Docker config for a sample node project",
+  "description": "A sample node application with docker config",
   "main": "index.js",
   "scripts": {
     "start": "PORT=8080 npx babel-node ./src/index.js",
