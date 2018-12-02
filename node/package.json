@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "PORT=8080 npx babel-node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dock-build": "docker build --tag $DOCKER_USERNAME/node-docker-bunny ./",
+    "dock-run": "docker run -p 8080:8080 $DOCKER_USERNAME/node-docker-bunny"
   },
   "author": "Prashanth Rajaram",
   "license": "ISC",

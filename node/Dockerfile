@@ -24,4 +24,4 @@ COPY . ${WORK_DIR}
 # Expose port
 EXPOSE ${PORT}
 # Run application
-CMD ["npx babel-node", "./src/index.js"]
+CMD ["npx", "babel-node", "./src/index.js"]
