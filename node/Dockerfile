@@ -6,9 +6,7 @@ LABEL name="node-docker-bunny"
 LABEL description="This is a node docker image"
 LABEL maintainer "Prashanth R <https://github.com/prashanthr>"
 # OS Upgrades & Dependencies
-RUN echo 'Installing OS dependencies...'
-RUN apt-get update &&  apt-get dist-upgrade -y && apt-get clean \
-&& echo 'Finished installing OS dependencies...'
+RUN apt-get update &&  apt-get dist-upgrade -y && apt-get clean
 # Set env
 ENV WORK_DIR=/var/www/deploy/app/
 ENV NODE_ENV=production
