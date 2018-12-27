@@ -1,0 +1,28 @@
+{
+  "name": "node-docker-bunny",
+  "version": "1.0.0",
+  "description": "A sample node application with docker config",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start ./ecosystem.json --env $NODE_ENV && pm2 logs",
+    "dock-build": "docker build --tag $DOCKER_USERNAME/node-bunny-pm2 ./",
+    "dock-run": "docker run -p 8080:8080 $DOCKER_USERNAME/node-bunny-pm2"
+  },
+  "author": "Prashanth Rajaram",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashanthr/sandbox-docker.git"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "express": "^4.16.4"
+  }
+}
