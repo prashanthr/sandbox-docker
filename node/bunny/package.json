@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "PORT=8080 npx babel-node ./src/index.js",
-    "dock-build": "docker build --tag $DOCKER_USERNAME/node-docker-bunny ./",
-    "dock-run": "docker run -p 8080:8080 $DOCKER_USERNAME/node-docker-bunny"
+    "dock-build": "docker build --tag $DOCKER_USERNAME/node-bunny ./",
+    "dock-run": "docker run -p 8080:8080 $DOCKER_USERNAME/node-bunny"
   },
   "author": "Prashanth Rajaram",
   "license": "ISC",
